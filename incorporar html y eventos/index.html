@@ -12,18 +12,25 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-    <title>Document</title>
+    <title>La casa del Musico</title>
 </head>
 
 <body>
     <!-- NAVEGADOR -->
     <nav class="nav">
         <ul class="navUl">
-            <li class="navLi"><a href="" class="links">INICIO</a></li>
-            <li class="navLi"><a href="" class="links">PRODUCTOS</a></li>
+            <li class="navLi"><a href="./index.html" class="links"><img class="img_logo"
+                src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/09/logo_final-e1599774278834.png"
+                alt=""></a></li>
+            <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
         </ul>
     </nav>
-    <h2 class="nuestrosProductos">Nuestros Productos</h2>
+    <aside class="aside">
+        <h4 class="categorias" id="todos">Todos</h4>
+        <h4 class="categorias" id="cuerdas">Cuerdas</h4>
+        <h4 class="categorias" id="vientos">Vientos</h5>
+        <h4 class="categorias" id="percusion">Percusion</h4>
+    </aside>
     <div class="container">
         <section class="productos">
             <div class="cont_productos">
@@ -39,9 +46,10 @@
                     <div class="box_precio">
                         <span class="precio1"><strike>$50.000</strike></span>
                         <span class="precio2"><b>$46.270</b></span>
-                        <span class="stock" id="stockG"><b>Stock: 3</b></span>
+                        <span class="stock" id="stock0"></span>
                     </div>
-                    <button id="btn1" class="instrumentos"><span class="shoping"><i class="fas fa-cart-plus"></i></span></button>
+                    <button id="btn0" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
                 </div>
             </div>
             <div class="cont_productos">
@@ -57,14 +65,15 @@
                     <div class="box_precio">
                         <span class="precio1"><strike>$120.000</strike></span>
                         <span class="precio2"><b>$118.270</b></span>
-                        <span class="stock" id="stockB"><b>Stock: 4</b></span>
+                        <span class="stock" id="stock1"></span>
                     </div>
-                    <button id="btn2" class="instrumentos"><span class="shoping"><i class="fas fa-cart-plus"></i></span></button>
+                    <button id="btn1" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
                 </div>
             </div>
             <div class="cont_productos">
                 <div class="card">
-                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2021/08/BATERIA-MAPEX.jpg"
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BATERIA-YAMAHA-STAGE-CUSTOM.jpg"
                         alt="Bateria Yamaha Stage Custom">
                 </div>
                 <div class="info">
@@ -74,9 +83,10 @@
                     <div class="box_precio">
                         <span class="precio1"><strike>$220.500</strike></span>
                         <span class="precio2"><b>$203.485</b></span>
-                        <span class="stock" id="stockBa"><b>Stock: 2</b></span>
+                        <span class="stock" id="stock2"></span>
                     </div>
-                    <button id="btn3" class="instrumentos"><span class="shoping"><i class="fas fa-cart-plus"></i></span></button>
+                    <button id="btn2" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
                 </div>
             </div>
             <div class="cont_productos">
@@ -92,16 +102,314 @@
                     <div class="box_precio">
                         <span class="precio1"><strike>$1180.000</strike></span>
                         <span class="precio2"><b>$176.270</b></span>
-                        <span class="stock" id="stockGu"><b>Stock: 2</b></span>
+                        <span class="stock" id="stock3"></span>
                     </div>
-                    <button id="btn4" class="instrumentos"><span class="shoping"><i class="fas fa-cart-plus"></i></span></button>
+                    <button id="btn3" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/12/CLARINETE-PARQUER-1.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2>Clarinete Estudio Parquer Custom PCL Si Bemol</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+                        <span class="precio1"><strike>$34.290</strike></span>
+                        <span class="precio2"><b>$27.432</b></span>
+                        <span class="stock" id="stock4"></span>
+                    </div>
+                    <button id="btn4" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/SAXO-HEIMOND-1.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2>Saxo Alto Heimond 6430L Con Estuche (Gold)</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+                        <span class="precio1"><strike>$79.460</strike></span>
+                        <span class="precio2"><b>$63.568</b></span>
+                        <span class="stock" id="stock5"></span>
+                    </div>
+                    <button id="btn5" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/SAXO-TENOR-MISTIQUE-PARQUER.jpg"
+                        alt="Saxo Tenor Mystic Parquer PSTM Con Estuche">
+                </div>
+                <div class="info">
+                    <h2>Saxo Tenor Mystic Parquer PSTM Con Estuche</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+                        <span class="precio1"><strike>$225.000</strike></span>
+                        <span class="precio2"><b>$220.230</b></span>
+                        <span class="stock" id="stock6"></span>
+                    </div>
+                    <button id="btn6" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/FLAUTA-TRAVERSA-YAMAHA.jpg"
+                        alt="Flauta Traversa YFL222 Yamaha BASE">
+                </div>
+                <div class="info">
+                    <h2>Flauta Traversa YFL222 Yamaha BASE</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+
+                        <span class="precio2"><b>$139.630</b></span>
+                        <span class="stock" id="stock7"></span>
+                    </div>
+                    <button id="btn7" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/12/ARMONICA-SWAN-X-7-1.jpg"
+                        alt="Set De 7 Armónicas Bluseras Swan">
+                </div>
+                <div class="info">
+                    <h2>Set De 7 Armónicas Bluseras Swan</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+
+                        <span class="precio2"><b>$11.520</b></span>
+                        <span class="stock" id="stock8"></span>
+                    </div>
+                    <button id="btn8" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/FLISCORNIO-PARQUER.jpg"
+                        alt="Fliscornio Contralto PFLALT Con Estuche PARQUER">
+                </div>
+                <div class="info">
+                    <h2>Fliscornio Contralto PFLALT Con Estuche PARQUER</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+
+                        <span class="precio2"><b>$96.000</b></span>
+                        <span class="stock" id="stock9"></span>
+                    </div>
+                    <button id="btn9" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/CAJON-SKULL-PERUANO.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2>Cajon Peruano Skull</h2>
+                    <p class="infop">Percusión ALEYMAR</p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+
+                        <span class="precio2"><b>$2000</b></span>
+                        <span class="stock" id="stock10"></span>
+                    </div>
+                    <button id="btn10" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2021/08/BATERIA-MAPEX.jpg"
+                        alt="Bateria Completa Mapex Prodigy 5 Cuerpos C/Soportes y Platillos">
+                </div>
+                <div class="info">
+                    <h2>Bateria Completa Mapex Prodigy 5 Cuerpos</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+                        <span class="precio1"><strike>$112.000</strike></span>
+                        <span class="precio2"><b>$101.270</b></span>
+                        <span class="stock" id="stock11"></span>
+                    </div>
+                    <button id="btn11" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/PLATILLO-UFIP-TIGER-HIHAT.jpg"
+                        alt="Platillo HIHAT 14 Tiger Ufip (Made in Italy)">
+                </div>
+                <div class="info">
+                    <h2>Platillo HIHAT 14 Tiger Ufip (Made in Italy)</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+
+                        <span class="precio2"><b>$26.725</b></span>
+                        <span class="stock" id="stock12"></span>
+                    </div>
+                    <button id="btn12" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/REMO-ENCORE-PINE-STRIPE.jpg"
+                        alt="Parche Remo Encore Pinstripe® 18 Pulg.">
+                </div>
+                <div class="info">
+                    <h2>Parche Remo Encore Pinstripe® 18 Pulg.</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+                        <span class="precio2"><b>$2.570</b></span>
+                        <span class="stock" id="stock13"></span>
+                    </div>
+                    <button id="btn13" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_891306-MLA29433887307_022019-O.webp"
+                        alt="Platillo 14 HiHat Sbr Sabian Sbr1402 (par)">
+                </div>
+                <div class="info">
+                    <h2>Platillo 14 HiHat Sbr Sabian Sbr1402 (par)</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+
+                        <span class="precio2"><b>$19.300</b></span>
+                        <span class="stock" id="stock14"></span>
+                    </div>
+                    <button id="btn14" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2021/06/BAJO-ACUSTICO-TAKAMINE1.jpg"
+                        alt="">
+                </div>
+                <div class="info">
+                    <h2>Bajo Electroacustico Takamine</h2>
+                    <p class="infop">Gb30ce C/Ecualizador</p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+
+                        <span class="precio2"><b>$124.940</b></span>
+                        <span class="stock" id="stock15"></span>
+                    </div>
+                    <button id="btn15" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/CELLO.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2>Cello 4/4 L1443 Heimond Completo con Funda y Arco</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+                        <span class="precio1"><strike>$58.950</strike></span>
+                        <span class="precio2"><b>$56.800</b></span>
+                        <span class="stock" id="stock16"></span>
+                    </div>
+                    <button id="btn16" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_674767-MLA46456991314_062021-O.webp" alt="">
+                </div>
+                <div class="info">
+                    <h2>Guitarra Electrica Fender Coronado 1/2 Caja Rosewood</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+                        <span class="precio1"><strike>$140.567</strike></span>
+                        <span class="precio2"><b>$132.449</b></span>
+                        <span class="stock" id="stock17"></span>
+                    </div>
+                    <button id="btn17" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_631186-MLA33084043263_122019-O.webp" alt="">
+                </div>
+                <div class="info">
+                    <h2>Combo Violin Estudio Madera 3/4 4/4 + Accesorios</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+                        <span class="precio1"><strike>$20.534</strike></span>
+                        <span class="precio2"><b>$16.276</b></span>
+                        <span class="stock" id="stock18"></span>
+                    </div>
+                    <button id="btn18" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
+                </div>
+            </div>
+            <div class="cont_productos">
+                <div class="card">
+                    <img src="https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/CONTRABAJO-PARQUER.jpg"
+                        alt="Contrabajo Custom 1/4 Parquer +Funda+Arco+Resina Db925">
+                </div>
+                <div class="info">
+                    <h2>Contrabajo Custom 1/4 Parquer +Funda+Arco+Resina</h2>
+                    <p class="infop"></p>
+                </div>
+                <div class="precio">
+                    <div class="box_precio">
+
+                        <span class="precio2"><b>$150.620</b></span>
+                        <span class="stock" id="stock19"></span>
+                    </div>
+                    <button id="btn19" class="instrumentos"><span class="shoping"><i
+                                class="fas fa-cart-plus"></i></span></button>
                 </div>
             </div>
         </section>
         <section class="carro">
-            <h3 class="carroTitulo">Carrito de compras</h3>
+            <h3 class="carroTitulo">Carrito de compras<i class="fas fa-cart-plus"></i></h3>
             <ul id="lista">
-            
+
             </ul>
             <p id="total"></p>
         </section>
