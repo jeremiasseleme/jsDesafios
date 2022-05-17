@@ -9,20 +9,40 @@ class instrumento {
     }
     comprar() {
         if (this.stock != 0) {
-            this.stock -= 1;
-            carritoCompras.push(this.nombre);
-            valorCompra.push(this.precio);
-            // alert(`Se agrego ${this.nombre} al carrito!`)
+            this.stock -= 1
+            carritoCompras.push(this.nombre)
+            valorCompra.push(this.precio)
+            Toastify({
+                text: `Se agrego ${this.nombre} al carrito!`,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: " rgba(28, 136, 18, 0.9)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
         } else {
-            alert("No hay mas stock de este producto");
+            Toastify({
+                text: "No hay mas stock de este producto",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "rgba(0, 0, 0, 0.9)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
         }
     }
-    // quitar(array) {
-    //     let pos = array.indexOf(this.nombre)
-    //     let elementoEliminado = array.splice(pos, 1)
-    //     this.stock += 1;
-    //     alert(`Se quito ${this.nombre} del carrito!`)
-    // }
 }
 
 // ------------ARRAYS---------------
@@ -31,8 +51,14 @@ let instrumentos = []
 let carritoCompras = []
 let valorCompra = []
 
-// ---------------- CARGAR PRODUCTOS--------------------------
+// ---------------------- RECUPERAR SESION --------------------
 
+carritoCompras = JSON.parse(sessionStorage.getItem("carritoCompras")) || [];
+valorCompra = JSON.parse(sessionStorage.getItem("valorCompra")) || [];
+instrumentos = JSON.parse(sessionStorage.getItem("stock")) || [];
+
+// ---------------- CARGAR PRODUCTOS--------------------------
+if (instrumentos == ""){
 instrumentos.push(new instrumento(46270, "Guitarra Clasica de Estudio C260", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/GUITARRA-NUNEZ-C260.jpg", "Cuerdas", 3))
 instrumentos.push(new instrumento(118270, "Bajo Electrico Yamaha Trbx 305", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BAJO-YAMAHA-5-CUERDAS.jpg", "Cuerdas", 4))
 instrumentos.push(new instrumento(203485, "Bateria Yamaha Stage Custom","https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BATERIA-YAMAHA-STAGE-CUSTOM.jpg", "Percusion", 2))
@@ -53,7 +79,8 @@ instrumentos.push(new instrumento(56800, "Cello 4/4 L1443 Heimond Completo","htt
 instrumentos.push(new instrumento(132449, "Guitarra electr Fender Coronado","https://http2.mlstatic.com/D_NQ_NP_674767-MLA46456991314_062021-O.webp", "Cuerdas", 1))
 instrumentos.push(new instrumento(16276, "Violin Estudio 4/4 + Accesorios","https://http2.mlstatic.com/D_NQ_NP_631186-MLA33084043263_122019-O.webp" , "Cuerdas", 5))
 instrumentos.push(new instrumento(150620, "Contrabajo Custom 1/4 Parquer","https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/CONTRABAJO-PARQUER.jpg", "Cuerdas", 2))
-
+}
+console.log(instrumentos)
 // ------------------ CREAR TAJETAAS ---------------------
 
 const container = document.getElementById("productos");
@@ -92,6 +119,7 @@ function agregarProducto(instrumento) {
     if (instrumento.stock !== 0) {
         const carroCompras = document.getElementById("lista");
         const item = document.createElement("li");
+        item.classList.add("item");
         item.innerHTML = `<img class="imgCarro" src="${instrumento.imagen}"
         alt="${instrumento.nombre}"> <p>${instrumento.nombre} $${instrumento.precio}</p> <button class="btnRemove"><i class="fas fa-trash"></i></button></button>`;
         carroCompras.appendChild(item);
@@ -99,7 +127,6 @@ function agregarProducto(instrumento) {
         console.log("No hay mas stock")
     }
 }
-
 
 // ------------- GUARDAR LOS DATOS DE LOS ARRAYS -----------------
 
@@ -118,38 +145,27 @@ function total() {
     document.getElementById("total").innerHTML = `TOTAL: $${total}`;
 }
 
-// ---------------------- RECUPERAR SESION --------------------
-
-const stockProductosSS = JSON.parse(sessionStorage.getItem("stock"))
-const carritoenSS = JSON.parse(sessionStorage.getItem("carritoCompras"))
-const valorCompraenSS = JSON.parse(sessionStorage.getItem("valorCompra"))
-
-if (carritoenSS !== null) {
-    instrumentos = stockProductosSS
-    valorCompra = valorCompraenSS
-    carritoCompras = carritoenSS
-    for (let index = 0; index < carritoCompras.length; index++) {
-        const carroCompras = document.getElementById("lista");
-        const item = document.createElement("li");
-        item.classList.add("item");
-        item.innerHTML = `${carritoCompras[index]}, $${valorCompra[index]} <button class="btnRemove"><i class="fas fa-trash"></button></button>`;
-        carroCompras.appendChild(item);
-        total()
-        cambiarStock()
-    }
+for (let index = 0; index < carritoCompras.length; index++) {
+    const carroCompras = document.getElementById("lista");
+    const item = document.createElement("li");
+    item.innerHTML = `${carritoCompras[index]}, $${valorCompra[index]} <button class="btnRemove"><i class="fas fa-trash"></button></button>`;
+    carroCompras.appendChild(item);
+    total()
+    cambiarStock()
+    console.log("dasd")
 }
 
 // --------------- INTENTO DE BOTONES REMOVE -------------------------
-if (carritoCompras !== ""){
+
+if(carritoCompras !== "") {
 const botonesR = document.getElementsByClassName("btnRemove");
-const padre = document.getElementById("lista");
-for (let index = 0; index < padre.length; index++){
+for (let index = 0; index < botonesR.length; index++){
         const botonR = botonesR[index];
 
     botonR.addEventListener("click", () => {
-        console.log("click")
-        const hijo = document.getElementsByClassName("item");
-        padre.removeChild(hijo[index])
+        const padre = document.getElementById("lista");
+        const hijo = document.getElementsByClassName("item")[index];
+        padre.removeChild(hijo);
     })
 }
 }
