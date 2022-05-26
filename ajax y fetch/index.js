@@ -48,68 +48,56 @@ class instrumento {
 
 
 // ------------ARRAYS---------------
-    
-    let instrumentos = []
-    let carritoCompras = []
-    let valorCompra = []
-    let imagenes = []
-    
-    // ---------------------- RECUPERAR SESION --------------------
-    
-    carritoCompras = JSON.parse(sessionStorage.getItem("carritoCompras")) || [];
-    valorCompra = JSON.parse(sessionStorage.getItem("valorCompra")) || [];
-    imagenes = JSON.parse(sessionStorage.getItem("imagenes")) || [];
-    instrumentos = JSON.parse(sessionStorage.getItem("stock")) || [];
-    
-    // ---------------- CARGAR PRODUCTOS--------------------------
 
-    if (instrumentos == "") {
-        instrumentos.push(new instrumento(46270, "Guitarra Clasica de Estudio C260", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/GUITARRA-NUNEZ-C260.jpg", "Cuerdas", 3))
-        instrumentos.push(new instrumento(118270, "Bajo Electrico Yamaha Trbx 305", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BAJO-YAMAHA-5-CUERDAS.jpg", "Cuerdas", 4))
-        instrumentos.push(new instrumento(203485, "Bateria Yamaha Stage Custom", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BATERIA-YAMAHA-STAGE-CUSTOM.jpg", "Percusion", 2))
-        instrumentos.push(new instrumento(176270, "Guitarra Yamaha Silent Slg200n", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/GUITARRA-YAMAHA-SLG200.jpg", "Cuerdas", 2))
-        instrumentos.push(new instrumento(27432, "Clarinete Estudio Parquer Custom", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/12/CLARINETE-PARQUER-1.jpg", "Vientos", 5))
-        instrumentos.push(new instrumento(63658, "Saxo Alto Heimond 6430L Gold", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/SAXO-HEIMOND-1.jpg", "Vientos", 2))
-        instrumentos.push(new instrumento(220230, "Saxo Tenor Mystic Parquer PSTM", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/SAXO-TENOR-MISTIQUE-PARQUER.jpg", "Vientos", 3))
-        instrumentos.push(new instrumento(139630, "Flauta Traversa YFL222 Yamaha", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/FLAUTA-TRAVERSA-YAMAHA.jpg", "Vientos", 4))
-        instrumentos.push(new instrumento(11520, "Set de 7 Armonicas Bluseras Swan", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/12/ARMONICA-SWAN-X-7-1.jpg", "Vientos", 6))
-        instrumentos.push(new instrumento(96000, "Fiscornio Contralto Parquer", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/FLISCORNIO-PARQUER.jpg", "Vientos", 1))
-        instrumentos.push(new instrumento(2000, "Cajon Peruano Skull ALEYMAR", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/CAJON-SKULL-PERUANO.jpg", "Percusion", 10))
-        instrumentos.push(new instrumento(101270, "Bateria Completa Mapex Prodigy", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/08/BATERIA-MAPEX.jpg", "Percusion", 3))
-        instrumentos.push(new instrumento(26725, "Platillo HIHAT 14 Tiger Uflip", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/PLATILLO-UFIP-TIGER-HIHAT.jpg", "Percusion", 4))
-        instrumentos.push(new instrumento(2570, "Parche Remo Encore Pinstripe 18''", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/REMO-ENCORE-PINE-STRIPE.jpg", "Percusion", 10))
-        instrumentos.push(new instrumento(19300, "Platillo 14 HiHat Sabian Sbr1402", "https://http2.mlstatic.com/D_NQ_NP_891306-MLA29433887307_022019-O.webp", "Percusion", 4))
-        instrumentos.push(new instrumento(124940, "Bajo Electroacustico Takamine", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/06/BAJO-ACUSTICO-TAKAMINE1.jpg", "Cuerdas", 2))
-        instrumentos.push(new instrumento(56800, "Cello 4/4 L1443 Heimond Completo", "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/CELLO.jpg", "Cuerdas", 3))
-        instrumentos.push(new instrumento(132449, "Guitarra electr Fender Coronado", "https://http2.mlstatic.com/D_NQ_NP_674767-MLA46456991314_062021-O.webp", "Cuerdas", 1))
-        instrumentos.push(new instrumento(16276, "Violin Estudio 4/4 + Accesorios", "https://http2.mlstatic.com/D_NQ_NP_631186-MLA33084043263_122019-O.webp", "Cuerdas", 5))
-        instrumentos.push(new instrumento(150620, "Contrabajo Custom 1/4 Parquer", "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/CONTRABAJO-PARQUER.jpg", "Cuerdas", 2))
-    }
-console.log(instrumentos);
+let instrumentos = []
+let carritoCompras = []
+let valorCompra = []
+let imagenes = []
+
+// ---------------------- RECUPERAR SESION --------------------
+
+carritoCompras = JSON.parse(sessionStorage.getItem("carritoCompras")) || [];
+valorCompra = JSON.parse(sessionStorage.getItem("valorCompra")) || [];
+imagenes = JSON.parse(sessionStorage.getItem("imagenes")) || [];
+instrumentos = JSON.parse(sessionStorage.getItem("stock")) || [];
+
+// ---------------- CARGAR PRODUCTOS--------------------------
+if (instrumentos == "") {
+    fetch("./instrumentos.json")
+        .then((res) => res.json())
+        .then((data) => {
+            data.forEach((producto) => {
+                instrumentos.push(new instrumento(producto.precio, producto.nombre, producto.imagen, producto.familia, producto.stock))
+            })
+        })
+}
+console.log(instrumentos)
 
 // ------------------ CREAR TAJETAAS ---------------------
-
-const container = document.getElementById("productos");
-for (let index = 0; index < instrumentos.length; index++) {
-    container.innerHTML += `<div class="cont_productos ${instrumentos[index].familia}">
-    <div class="card">
-    <img src="${instrumentos[index].imagen}"
-    alt="${instrumentos[index].nombre}">
-    </div>
-    <div class="info">
-    <h2>${instrumentos[index].nombre}</h2>
-    <p class="infop"></p>
-    </div>
-    <div class="precio">
-    <div class="box_precio">
-    <span class="precio2"><b>$${instrumentos[index].precio}</b></span>
-    <span class="stock" id="stock${index}">Stock: ${instrumentos[index].stock}</span>
-    </div>
-    <button id="btn0" class="instrumentos"><span class="shoping"><i
-    class="fas fa-cart-plus"></i></span></button>
-    </div>
-    </div>`
-}
+setTimeout(() => {
+    const container = document.getElementById("productos");
+    console.log(container);
+    for (let index = 0; index < instrumentos.length; index++) {
+        container.innerHTML += `<div class="cont_productos ${instrumentos[index].familia}">
+        <div class="card">
+        <img src="${instrumentos[index].imagen}"
+        alt="${instrumentos[index].nombre}">
+        </div>
+        <div class="info">
+        <h2>${instrumentos[index].nombre}</h2>
+        <p class="infop"></p>
+        </div>
+        <div class="precio">
+        <div class="box_precio">
+        <span class="precio2"><b>$${instrumentos[index].precio}</b></span>
+        <span class="stock" id="stock${index}">Stock: ${instrumentos[index].stock}</span>
+        </div>
+        <button id="btn0" class="instrumentos"><span class="shoping"><i
+        class="fas fa-cart-plus"></i></span></button>
+        </div>
+        </div>`
+    }
+}, 100)
 
 // -------------- ACTUALIZAR STOCK -----------------------
 
@@ -153,17 +141,18 @@ function total() {
 }
 
 // ----------------------- RECARGAR CARRITO ---------------------------------
-
-for (let index = 0; index < carritoCompras.length; index++) {
-    const carroCompras = document.getElementById("lista");
-    const item = document.createElement("li");
-    item.classList.add("item");
-    item.innerHTML = `<img class="imgCarro" src="${imagenes[index]}" alt="${carritoCompras[index]}"> <p>${carritoCompras[index]} $${valorCompra[index]}</p>`;
-    carroCompras.appendChild(item);
-    total()
-    cambiarStock()
-    console.log("dasd")
-}
+setTimeout(() => {
+    for (let index = 0; index < carritoCompras.length; index++) {
+        const carroCompras = document.getElementById("lista");
+        const item = document.createElement("li");
+        item.classList.add("item");
+        item.innerHTML = `<img class="imgCarro" src="${imagenes[index]}" alt="${carritoCompras[index]}"> <p>${carritoCompras[index]} $${valorCompra[index]}</p>`;
+        carroCompras.appendChild(item);
+        total()
+        cambiarStock()
+        console.log("dasd")
+    }
+}, 200)
 
 // --------------- INTENTO DE BOTONES REMOVE -------------------------
 
@@ -187,27 +176,45 @@ for (let index = 0; index < carritoCompras.length; index++) {
 //     }
 // }
 
+// ---------------------- VACIAR CARRITO -----------------------------
 function quitarProducto() {
+    valorCompra = [];
+    carritoCompras = [];
+    imagenes = [];
+    instrumentos = [];
+    fetch("./instrumentos.json")
+        .then((res) => res.json())
+        .then((data) => {
+            data.forEach((producto) => {
+                instrumentos.push(new instrumento(producto.precio, producto.nombre, producto.imagen, producto.familia, producto.stock))
+            })
+        })
+        setTimeout(()=> {
+            cambiarStock();
+            guardarSesion()
+        },200)
+    document.getElementById("total").innerHTML = `TOTAL: $0`;
     document.querySelectorAll(".item").forEach(instrumentoC => {
         instrumentoC.remove();
     })
 }
 
 // -------------------------- BOTONES COMPRA CARDS --------------------------------------
+setTimeout(() => {
+    const botones = document.getElementsByClassName("instrumentos");
+    for (let index = 0; index < botones.length; index++) {
+        const boton = botones[index];
 
-const botones = document.getElementsByClassName("instrumentos");
-for (let index = 0; index < botones.length; index++) {
-    const boton = botones[index];
-
-    boton.addEventListener("click", () => {
-        const instrumento = instrumentos[index];
-        agregarProducto(instrumento);
-        instrumento.comprar()
-        total()
-        cambiarStock()
-        guardarSesion()
-    }); 0
-}
+        boton.addEventListener("click", () => {
+            const instrumento = instrumentos[index];
+            agregarProducto(instrumento);
+            instrumento.comprar()
+            total()
+            cambiarStock()
+            guardarSesion()
+        }); 0
+    }
+}, 500)
 
 
 // ------------------BUSCADOR--------------------
