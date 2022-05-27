@@ -16,14 +16,14 @@ class instrumento {
             Toastify({
                 text: `Se agrego ${this.nombre} al carrito!`,
                 duration: 3000,
-                destination: "https://github.com/apvarun/toastify-js",
+                destination: "",
                 newWindow: true,
                 close: true,
                 gravity: "top", // `top` or `bottom`
                 position: "left", // `left`, `center` or `right`
                 stopOnFocus: true, // Prevents dismissing of toast on hover
                 style: {
-                    background: " rgba(28, 136, 18, 0.9)",
+                    background: " rgba(255, 0, 0, 0.9)",
                 },
                 onClick: function () { } // Callback after click
             }).showToast();
@@ -57,9 +57,16 @@ let imagenes = []
 // ---------------------- RECUPERAR SESION --------------------
 
 carritoCompras = JSON.parse(sessionStorage.getItem("carritoCompras")) || [];
+console.log(carritoCompras)
 valorCompra = JSON.parse(sessionStorage.getItem("valorCompra")) || [];
+console.log(valorCompra)
 imagenes = JSON.parse(sessionStorage.getItem("imagenes")) || [];
-instrumentos = JSON.parse(sessionStorage.getItem("stock")) || [];
+console.log(imagenes)
+if((JSON.parse(sessionStorage.getItem("stock"))) !== null) {
+JSON.parse(sessionStorage.getItem("stock")).forEach((producto) => {
+instrumentos.push(new instrumento(producto.precio, producto.nombre, producto.imagen, producto.familia, producto.stock))
+})
+}
 
 // ---------------- CARGAR PRODUCTOS--------------------------
 if (instrumentos == "") {
@@ -193,11 +200,26 @@ function quitarProducto() {
             cambiarStock();
             guardarSesion()
         },200)
+        Toastify({
+            text: "Vaciaste el carrito de compras!!",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "rgba(0, 0, 255, 0.9)",
+            },
+            onClick: function () { } // Callback after click
+        }).showToast();
     document.getElementById("total").innerHTML = `TOTAL: $0`;
     document.querySelectorAll(".item").forEach(instrumentoC => {
         instrumentoC.remove();
     })
-}
+} 
+
 
 // -------------------------- BOTONES COMPRA CARDS --------------------------------------
 setTimeout(() => {
