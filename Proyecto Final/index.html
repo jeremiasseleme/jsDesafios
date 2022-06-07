@@ -20,29 +20,42 @@
     <nav class="nav">
         <ul class="navUl">
             <li class="navLi"><a href="./index.html" class="links"><img class="img_logo"
-                src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/09/logo_final-e1599774278834.png"
-                alt=""></a></li>
+                        src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/09/logo_final-e1599774278834.png"
+                        alt=""></a></li>
             <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
         </ul>
     </nav>
     <aside class="aside">
-        <h4 class="categorias" id="todos">Nuestros Productos</h4>
+        <h4 class="categorias active" id="todos">Nuestros Productos</h4>
         <h4 class="categorias" id="cuerdas">Cuerdas</h4>
         <h4 class="categorias" id="vientos">Vientos</h5>
-        <h4 class="categorias" id="percusion">Percusion</h4>
+            <h4 class="categorias" id="percusion">Percusion</h4>
     </aside>
     <div class="container">
         <section class="productos" id="productos">
-            
+
         </section>
         <section class="carro">
             <h3 class="carroTitulo">Carrito de compras<i class="fas fa-cart-plus"></i></h3>
-            <button onclick="quitarProducto()" class="btnRemove">Limpiar Carrito  <i class="fas fa-trash"></i></button></button>
+            <button onclick="quitarProducto()" class="btnRemove">Limpiar Carrito <i
+                    class="fas fa-trash"></i></button></button>
             <ul id="lista">
 
             </ul>
             <p id="total"></p>
         </section>
+    </div>
+    <!-- _________________________ -->
+    <!-- FOOTER -->
+    <!-- _________________________ -->
+    <div class="footer">
+        <img class="img_logo"
+            src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/09/logo_final-e1599774278834.png">
+            <p>Av. Emilio Olmos 110 | Córdoba Capital (5000)
+
+                Lunes a Viernes de 10:00 a 19:00 hs.
+                
+                Sábados 10:00 a 14:00 hs.</p>
     </div>
     <script src="./index.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

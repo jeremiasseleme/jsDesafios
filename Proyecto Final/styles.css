@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 body {
-  /* background-image: url("https://c.wallhere.com/photos/62/db/bricks-118325.jpg!d"); */
+  background-image: url("https://c.wallhere.com/photos/62/db/bricks-118325.jpg!d");
   background-size: cover;
   letter-spacing: 0.1rem;
   /* font-family: 'Luxurious Roman', cursive; */
@@ -216,4 +216,16 @@ body {
     margin:0.4rem;
     width: 80px;
     height: 80px;
+  }
+
+  .footer{
+    background-color:rgba(20, 25, 95, 0.99) ;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer p{
+    color: white;
   }
