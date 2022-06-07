@@ -1,0 +1,25 @@
+
+[
+
+{"precio":46270, "nombre": "Guitarra Clasica de Estudio C260", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/GUITARRA-NUNEZ-C260.jpg", "familia": "Cuerdas", "stock": 3},
+{"precio":118270, "nombre": "Bajo Electrico Yamaha Trbx 305", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BAJO-YAMAHA-5-CUERDAS.jpg", "familia": "Cuerdas", "stock": 4},
+{"precio":203485, "nombre": "Bateria Yamaha Stage Custom", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BATERIA-YAMAHA-STAGE-CUSTOM.jpg", "familia": "Percusion", "stock": 2},
+{"precio":176270, "nombre": "Guitarra Yamaha Silent Slg200n", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/GUITARRA-YAMAHA-SLG200.jpg", "familia": "Cuerdas", "stock": 2},
+{"precio":27432, "nombre": "Clarinete Estudio Parquer Custom", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/12/CLARINETE-PARQUER-1.jpg", "familia": "Vientos", "stock": 5},
+{"precio":63658, "nombre": "Saxo Alto Heimond 6430L Gold", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/SAXO-HEIMOND-1.jpg", "familia": "Vientos", "stock": 2},
+{"precio":220230, "nombre": "Saxo Tenor Mystic Parquer PSTM", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/SAXO-TENOR-MISTIQUE-PARQUER.jpg", "familia": "Vientos", "stock": 3},
+{"precio":139630, "nombre": "Flauta Traversa YFL222 Yamaha", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/FLAUTA-TRAVERSA-YAMAHA.jpg", "familia": "Vientos", "stock": 4},
+{"precio":11520, "nombre": "Set de 7 Armonicas Bluseras Swan", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/12/ARMONICA-SWAN-X-7-1.jpg", "familia": "Vientos", "stock": 6},
+{"precio":96000, "nombre": "Fiscornio Contralto Parquer", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/FLISCORNIO-PARQUER.jpg", "familia": "Vientos", "stock": 1},
+{"precio":2000, "nombre": "Cajon Peruano Skull ALEYMAR", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/CAJON-SKULL-PERUANO.jpg", "familia": "Percusion", "stock": 10},
+{"precio":101270, "nombre": "Bateria Completa Mapex Prodigy", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/08/BATERIA-MAPEX.jpg", "familia": "Percusion", "stock": 3},
+{"precio":26725, "nombre": "Platillo HIHAT 14 Tiger Uflip", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/PLATILLO-UFIP-TIGER-HIHAT.jpg", "familia": "Percusion", "stock": 4},
+{"precio":2570, "nombre": "Parche Remo Encore Pinstripe 18''", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/REMO-ENCORE-PINE-STRIPE.jpg", "familia": "Percusion", "stock": 10},
+{"precio":19300, "nombre": "Platillo 14 HiHat Sabian Sbr1402", "imagen": "https://http2.mlstatic.com/D_NQ_NP_891306-MLA29433887307_022019-O.webp", "familia": "Percusion", "stock": 4},
+{"precio":124940, "nombre": "Bajo Electroacustico Takamine", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/06/BAJO-ACUSTICO-TAKAMINE1.jpg", "familia": "Cuerdas", "stock": 2},
+{"precio":56800, "nombre": "Cello 4/4 L1443 Heimond Completo", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/CELLO.jpg", "familia": "Cuerdas", "stock": 3},
+{"precio":132449, "nombre": "Guitarra electr Fender Coronado", "imagen": "https://http2.mlstatic.com/D_NQ_NP_674767-MLA46456991314_062021-O.webp", "familia": "Cuerdas", "stock": 1},
+{"precio":16276, "nombre": "Violin Estudio 4/4 + Accesorios", "imagen": "https://http2.mlstatic.com/D_NQ_NP_631186-MLA33084043263_122019-O.webp", "familia": "Cuerdas", "stock": 5},
+{"precio":150620, "nombre": "Contrabajo Custom 1/4 Parquer", "imagen": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/CONTRABAJO-PARQUER.jpg", "familia": "Cuerdas", "stock": 2}
+
+]
